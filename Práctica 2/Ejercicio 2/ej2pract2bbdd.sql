@@ -438,33 +438,186 @@ select name from city where district like"Extremadura";
 1 row in set (0.00 sec)
 
 ---20. Saca la cuenta de las ciudades agrupadas por provincias y por países.
-select count(name) from city group by district,countrycode limit 20;
-select countrycode,district,count(name) from city group by district,countrycode limit 20;
-+-------------+---------------+-------------+
-| countrycode | district      | count(name) |
-+-------------+---------------+-------------+
-| AFG         | Kabol         |           1 |
-| AFG         | Qandahar      |           1 |
-| AFG         | Herat         |           1 |
-| AFG         | Balkh         |           1 |
-| NLD         | Noord-Holland |           5 |
-| NLD         | Zuid-Holland  |           6 |
-| NLD         | Utrecht       |           2 |
-| NLD         | Noord-Brabant |           4 |
-| NLD         | Groningen     |           1 |
-| NLD         | Gelderland    |           4 |
-| NLD         | Overijssel    |           2 |
-| NLD         | Flevoland     |           1 |
-| NLD         | Limburg       |           2 |
-| NLD         | Drenthe       |           1 |
-| ANT         | Curaçao       |           1 |
-| ALB         | Tirana        |           1 |
-| DZA         | Alger         |           1 |
-| DZA         | Oran          |           1 |
-| DZA         | Constantine   |           1 |
-| DZA         | Annaba        |           1 |
-+-------------+---------------+-------------+
-20 rows in set (0.01 sec)
+select countrycode,district,count(name) from city group by district,countrycode;
++-------------+----------------------+-------------+
+| countrycode | district             | count(name) |
++-------------+----------------------+-------------+
+| AFG         | Kabol                |           1 |
+| AFG         | Qandahar             |           1 |
+| AFG         | Herat                |           1 |
+| AFG         | Balkh                |           1 |
+| NLD         | Noord-Holland        |           5 |
+| NLD         | Zuid-Holland         |           6 |
+| NLD         | Utrecht              |           2 |
+| NLD         | Noord-Brabant        |           4 |
+| NLD         | Groningen            |           1 |
+| NLD         | Gelderland           |           4 |
+| NLD         | Overijssel           |           2 |
+| NLD         | Flevoland            |           1 |
+| NLD         | Limburg              |           2 |
+| NLD         | Drenthe              |           1 |
+| ANT         | Curaçao              |           1 |
+| ALB         | Tirana               |           1 |
+| DZA         | Alger                |           1 |
+| DZA         | Oran                 |           1 |
+| DZA         | Constantine          |           1 |
+| DZA         | Annaba               |           1 |
+| DZA         | Batna                |           1 |
+| DZA         | Sétif                |           1 |
+| DZA         | Sidi Bel Abbès       |           1 |
+| DZA         | Skikda               |           1 |
+| DZA         | Biskra               |           1 |
+| DZA         | Blida                |           1 |
+| DZA         | Béjaïa               |           1 |
+| DZA         | Mostaganem           |           1 |
+| DZA         | Tébessa              |           1 |
+| DZA         | Tlemcen              |           1 |
+| DZA         | Béchar               |           1 |
+| DZA         | Tiaret               |           1 |
+| DZA         | Chlef                |           1 |
+| DZA         | Ghardaïa             |           1 |
+| ASM         | Tutuila              |           2 |
+| AND         | Andorra la Vella     |           1 |
+| AGO         | Luanda               |           1 |
+| AGO         | Huambo               |           1 |
+| AGO         | Benguela             |           2 |
+| AGO         | Namibe               |           1 |
+| AIA         | ?                    |           2 |
+| ATG         | St John              |           1 |
+| ARE         | Dubai                |           1 |
+| ARE         | Abu Dhabi            |           2 |
+| ARE         | Sharja               |           1 |
+| ARE         | Ajman                |           1 |
+| ARG         | Distrito Federal     |           1 |
+| ARG         | Buenos Aires         |          31 |
+| ARG         | Córdoba              |           2 |
+| ARG         | Santa Fé             |           2 |
+| ARG         | Tucumán              |           1 |
+| ARG         | Salta                |           1 |
+| ARG         | Corrientes           |           1 |
+| ARG         | Chaco                |           1 |
+| ARG         | Entre Rios           |           2 |
+| ARG         | Mendoza              |           5 |
+| ARG         | Misiones             |           1 |
+| ARG         | Santiago del Estero  |           1 |
+| ARG         | Jujuy                |           1 |
+| ARG         | Neuquén              |           1 |
+| ARG         | Formosa              |           1 |
+| ARG         | La Rioja             |           1 |
+| ARG         | Catamarca            |           1 |
+| ARG         | Chubut               |           1 |
+| ARG         | San Juan             |           1 |
+| ARG         | San Luis             |           1 |
+| ARM         | Yerevan              |           1 |
+| ARM         | ?irak                |           1 |
+| ARM         | Lori                 |           1 |
+| ABW         | ?                    |           1 |
+| AUS         | New South Wales      |           4 |
+| AUS         | Victoria             |           2 |
+| AUS         | Queensland           |           4 |
+| AUS         | West Australia       |           1 |
+| AUS         | South Australia      |           1 |
+| AUS         | Capital Region       |           1 |
+| AUS         | Tasmania             |           1 |
+| AZE         | Baki                 |           1 |
+| AZE         | Gäncä                |           1 |
+| AZE         | Sumqayit             |           1 |
+| AZE         | Mingäçevir           |           1 |
+| BHS         | New Providence       |           1 |
+| BHR         | al-Manama            |           1 |
+| BGD         | Dhaka                |           8 |
+| BGD         | Chittagong           |           3 |
+| BGD         | Khulna               |           2 |
+| BGD         | Rajshahi             |           9 |
+| BGD         | Barisal              |           1 |
+| BGD         | Sylhet               |           1 |
+| BRB         | St Michael           |           1 |
+| BEL         | Antwerpen            |           1 |
+| BEL         | East Flanderi        |           1 |
+| BEL         | Hainaut              |           2 |
+| BEL         | Liège                |           1 |
+| BEL         | Bryssel              |           2 |
+| BEL         | West Flanderi        |           1 |
+| BEL         | Namur                |           1 |
+| BLZ         | Belize City          |           1 |
+| BLZ         | Cayo                 |           1 |
+| BEN         | Atlantique           |           1 |
+| BEN         | Ouémé                |           1 |
+| BEN         | Atacora              |           1 |
+| BEN         | Borgou               |           1 |
+| BMU         | Saint George´s       |           1 |
+| BMU         | Hamilton             |           1 |
+| BTN         | Thimphu              |           1 |
+| BOL         | Santa Cruz           |           1 |
+| BOL         | La Paz               |           2 |
+| BOL         | Cochabamba           |           1 |
+| BOL         | Oruro                |           1 |
+| BOL         | Chuquisaca           |           1 |
+| BOL         | Potosí               |           1 |
+| BOL         | Tarija               |           1 |
+| BIH         | Federaatio           |           2 |
+| BIH         | Republika Srpska     |           1 |
+| BWA         | Gaborone             |           1 |
+| BWA         | Francistown          |           1 |
+| BRA         | São Paulo            |          69 |
+| BRA         | Rio de Janeiro       |          22 |
+| BRA         | Bahia                |          15 |
+| BRA         | Minas Gerais         |          27 |
+| BRA         | Ceará                |           6 |
+| BRA         | Distrito Federal     |           1 |
+| BRA         | Paraná               |          14 |
+| BRA         | Pernambuco           |          11 |
+| BRA         | Rio Grande do Sul    |          20 |
+| BRA         | Amazonas             |           1 |
+| BRA         | Pará                 |           8 |
+| BRA         | Goiás                |           6 |
+| BRA         | Maranhão             |           7 |
+| BRA         | Alagoas              |           2 |
+| BRA         | Piauí                |           2 |
+| BRA         | Rio Grande do Norte  |           3 |
+| BRA         | Mato Grosso do Sul   |           3 |
+| BRA         | Paraíba              |           4 |
+| BRA         | Mato Grosso          |           3 |
+| BRA         | Sergipe              |           2 |
+| BRA         | Santa Catarina       |          10 |
+| BRA         | Espírito Santo       |           7 |
+| BRA         | Rondônia             |           2 |
+| BRA         | Acre                 |           1 |
+| BRA         | Amapá                |           1 |
+| BRA         | Roraima              |           1 |
+| BRA         | Tocantins            |           2 |
+| GBR         | England              |          71 |
+| GBR         | Scotland             |           4 |
+| GBR         | Wales                |           3 |
+| GBR         | North Ireland        |           1 |
+| GBR         | Jersey               |           1 |
+| GBR         | ?                    |           1 |
+| VGB         | Tortola              |           1 |
+| BRN         | Brunei and Muara     |           1 |
+| USA         | Iowa                 |           3 |
+| USA         | Idaho                |           1 |
+| USA         | Mississippi          |           1 |
+| USA         | Arkansas             |           1 |
+| USA         | Utah                 |           4 |
+| USA         | Rhode Island         |           1 |
+| USA         | Connecticut          |           5 |
+| USA         | South Dakota         |           1 |
+| USA         | South Carolina       |           2 |
+| USA         | New Hampshire        |           1 |
+| USA         | Montana              |           1 |
+| VIR         | St Thomas            |           1 |
+| ZWE         | Harare               |           3 |
+| ZWE         | Bulawayo             |           1 |
+| ZWE         | Manicaland           |           1 |
+| ZWE         | Midlands             |           1 |
+| PSE         | Gaza                 |           1 |
+| PSE         | Khan Yunis           |           1 |
+| PSE         | Hebron               |           1 |
+| PSE         | North Gaza           |           1 |
+| PSE         | Nablus               |           1 |
+| PSE         | Rafah                |           1 |
++-------------+----------------------+-------------+
+1412 rows in set (0.00 sec)
 
 ---21. Saca la suma de la población de todos los distritos de España
 select sum(population) from city where countrycode like "ESP";
