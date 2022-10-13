@@ -1795,11 +1795,8 @@ select country.name,count(countrylanguage.language) from country,countrylanguage
 | Netherlands Antilles |                               2 |
 | American Samoa       |                               2 |
 | Burundi              |                               2 |
-| Belgium              |                               3 |
 | Belarus              |                               2 |
-| Bolivia              |                               3 |
 | Canada               |                               2 |
-| Switzerland          |                               4 |
 | Cyprus               |                               2 |
 | Finland              |                               2 |
 | Faroe Islands        |                               2 |
@@ -1810,27 +1807,22 @@ select country.name,count(countrylanguage.language) from country,countrylanguage
 | Kyrgyzstan           |                               2 |
 | Sri Lanka            |                               2 |
 | Lesotho              |                               2 |
-| Luxembourg           |                               3 |
 | Madagascar           |                               2 |
 | Marshall Islands     |                               2 |
 | Malta                |                               2 |
 | Nauru                |                               2 |
-| Peru                 |                               3 |
 | Palau                |                               2 |
 | Paraguay             |                               2 |
 | Romania              |                               2 |
 | Rwanda               |                               2 |
-| Singapore            |                               3 |
 | Somalia              |                               2 |
 | Seychelles           |                               2 |
 | Togo                 |                               2 |
 | Tonga                |                               2 |
 | Tuvalu               |                               2 |
-| Vanuatu              |                               3 |
 | Samoa                |                               2 |
-| South Africa         |                               4 |
 +----------------------+---------------------------------+
-38 rows in set (0.00 sec)
+30 rows in set (0.01 sec)
 
 ---19. Saca el jefe de gobierno de un país cuya capital es Madrid. 
 select headofstate from country,city where country.capital=city.id and city.name like 'madrid';
@@ -1865,7 +1857,7 @@ select * from vista2;
 Empty set (0.00 sec)
 
 ---3. Crea una vista con todas las provincias (Distritos) de España
-create view vista3 as select district from city where countrycode like 'ESP';
+create view vista3 as select distinct(district) from city where countrycode like 'ESP';
 
 Query OK, 0 rows affected (0.01 sec)
 
@@ -1878,62 +1870,20 @@ select * from vista3;
 | Valencia           |
 | Andalusia          |
 | Aragonia           |
-| Andalusia          |
 | Baskimaa           |
 | Canary Islands     |
 | Murcia             |
 | Balears            |
 | Castilla and León  |
-| Andalusia          |
 | Galicia            |
-| Valencia           |
 | Asturia            |
-| Katalonia          |
-| Andalusia          |
-| Galicia            |
-| Baskimaa           |
-| Canary Islands     |
-| Katalonia          |
-| Asturia            |
-| Madrid             |
-| Valencia           |
-| Katalonia          |
 | Cantabria          |
-| Andalusia          |
 | Navarra            |
-| Baskimaa           |
-| Murcia             |
-| Madrid             |
-| Madrid             |
-| Andalusia          |
-| Katalonia          |
-| Madrid             |
-| Castilla and León  |
-| Castilla and León  |
 | Kastilia-La Mancha |
-| Madrid             |
-| Andalusia          |
-| Madrid             |
-| Andalusia          |
-| Castilla and León  |
-| Valencia           |
 | Extremadura        |
-| Canary Islands     |
 | La Rioja           |
-| Katalonia          |
-| Katalonia          |
-| Katalonia          |
-| Andalusia          |
-| Galicia            |
-| Katalonia          |
-| Andalusia          |
-| Andalusia          |
-| Baskimaa           |
-| Andalusia          |
-| Galicia            |
-| Madrid             |
 +--------------------+
-59 rows in set (0.00 sec)
+17 rows in set (0.00 sec)
 
 ---4. Crea una vista con todos los países con sus capitales y la lengua oficial
 create view vista4 as select country.name as 'Pais' ,city.name as 'Capital',group_concat(countrylanguage.language) as 'lenguas_oficiales' from city,country,countrylanguage where city.id=country.capital  and country.code=countrylanguage.countrycode and countrylanguage.isofficial like 'T'  group by countrylanguage.countrycode;
