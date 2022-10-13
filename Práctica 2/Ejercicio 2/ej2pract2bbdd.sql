@@ -52,96 +52,174 @@ select name,district from city;
 | Eindhoven      | Noord-Brabant |
 | Tilburg        | Noord-Brabant |
 +----------------+---------------+
-10 rows in set (0.00 sec)
+4079 rows in set (0.05 sec)
 
----4. Ver todas las ciudades que que tienen el código ESP.
-select * from city where countrycode ="ESP"; 
+---4. Ver todas las ciudades que que tienen el código ESP. 
 select name from city where countrycode="ESP";
-+-----+--------------------------------+-------------+--------------------+------------+
-| ID  | Name                           | CountryCode | District           | Population |
-+-----+--------------------------------+-------------+--------------------+------------+
-| 653 | Madrid                         | ESP         | Madrid             |    2879052 |
-| 654 | Barcelona                      | ESP         | Katalonia          |    1503451 |
-| 655 | Valencia                       | ESP         | Valencia           |     739412 |
-| 656 | Sevilla                        | ESP         | Andalusia          |     701927 |
-| 657 | Zaragoza                       | ESP         | Aragonia           |     603367 |
-| 658 | Málaga                         | ESP         | Andalusia          |     530553 |
-| 659 | Bilbao                         | ESP         | Baskimaa           |     357589 |
-| 660 | Las Palmas de Gran Canaria     | ESP         | Canary Islands     |     354757 |
-| 661 | Murcia                         | ESP         | Murcia             |     353504 |
-| 662 | Palma de Mallorca              | ESP         | Balears            |     326993 |
-| 663 | Valladolid                     | ESP         | Castilla and León  |     319998 |
-| 664 | Córdoba                        | ESP         | Andalusia          |     311708 |
-| 665 | Vigo                           | ESP         | Galicia            |     283670 |
-| 666 | Alicante [Alacant]             | ESP         | Valencia           |     272432 |
-| 667 | Gijón                          | ESP         | Asturia            |     267980 |
-| 668 | L´Hospitalet de Llobregat      | ESP         | Katalonia          |     247986 |
-| 669 | Granada                        | ESP         | Andalusia          |     244767 |
-| 670 | A Coruña (La Coruña)           | ESP         | Galicia            |     243402 |
-| 671 | Vitoria-Gasteiz                | ESP         | Baskimaa           |     217154 |
-| 672 | Santa Cruz de Tenerife         | ESP         | Canary Islands     |     213050 |
-| 673 | Badalona                       | ESP         | Katalonia          |     209635 |
-| 674 | Oviedo                         | ESP         | Asturia            |     200453 |
-| 675 | Móstoles                       | ESP         | Madrid             |     195351 |
-| 676 | Elche [Elx]                    | ESP         | Valencia           |     193174 |
-| 677 | Sabadell                       | ESP         | Katalonia          |     184859 |
-| 678 | Santander                      | ESP         | Cantabria          |     184165 |
-| 679 | Jerez de la Frontera           | ESP         | Andalusia          |     182660 |
-| 680 | Pamplona [Iruña]               | ESP         | Navarra            |     180483 |
-| 681 | Donostia-San Sebastián         | ESP         | Baskimaa           |     179208 |
-| 682 | Cartagena                      | ESP         | Murcia             |     177709 |
-| 683 | Leganés                        | ESP         | Madrid             |     173163 |
-| 684 | Fuenlabrada                    | ESP         | Madrid             |     171173 |
-| 685 | Almería                        | ESP         | Andalusia          |     169027 |
-| 686 | Terrassa                       | ESP         | Katalonia          |     168695 |
-| 687 | Alcalá de Henares              | ESP         | Madrid             |     164463 |
-| 688 | Burgos                         | ESP         | Castilla and León  |     162802 |
-| 689 | Salamanca                      | ESP         | Castilla and León  |     158720 |
-| 690 | Albacete                       | ESP         | Kastilia-La Mancha |     147527 |
-| 691 | Getafe                         | ESP         | Madrid             |     145371 |
-| 692 | Cádiz                          | ESP         | Andalusia          |     142449 |
-| 693 | Alcorcón                       | ESP         | Madrid             |     142048 |
-| 694 | Huelva                         | ESP         | Andalusia          |     140583 |
-| 695 | León                           | ESP         | Castilla and León  |     139809 |
-| 696 | Castellón de la Plana [Castell | ESP         | Valencia           |     139712 |
-| 697 | Badajoz                        | ESP         | Extremadura        |     136613 |
-| 698 | [San Cristóbal de] la Laguna   | ESP         | Canary Islands     |     127945 |
-| 699 | Logroño                        | ESP         | La Rioja           |     127093 |
-| 700 | Santa Coloma de Gramenet       | ESP         | Katalonia          |     120802 |
-| 701 | Tarragona                      | ESP         | Katalonia          |     113016 |
-| 702 | Lleida (Lérida)                | ESP         | Katalonia          |     112207 |
-| 703 | Jaén                           | ESP         | Andalusia          |     109247 |
-| 704 | Ourense (Orense)               | ESP         | Galicia            |     109120 |
-| 705 | Mataró                         | ESP         | Katalonia          |     104095 |
-| 706 | Algeciras                      | ESP         | Andalusia          |     103106 |
-| 707 | Marbella                       | ESP         | Andalusia          |     101144 |
-| 708 | Barakaldo                      | ESP         | Baskimaa           |      98212 |
-| 709 | Dos Hermanas                   | ESP         | Andalusia          |      94591 |
-| 710 | Santiago de Compostela         | ESP         | Galicia            |      93745 |
-| 711 | Torrejón de Ardoz              | ESP         | Madrid             |      92262 |
-+-----+--------------------------------+-------------+--------------------+------------+
++--------------------------------+
+| name                           |
++--------------------------------+
+| Madrid                         |
+| Barcelona                      |
+| Valencia                       |
+| Sevilla                        |
+| Zaragoza                       |
+| Málaga                         |
+| Bilbao                         |
+| Las Palmas de Gran Canaria     |
+| Murcia                         |
+| Palma de Mallorca              |
+| Valladolid                     |
+| Córdoba                        |
+| Vigo                           |
+| Alicante [Alacant]             |
+| Gijón                          |
+| L´Hospitalet de Llobregat      |
+| Granada                        |
+| A Coruña (La Coruña)           |
+| Vitoria-Gasteiz                |
+| Santa Cruz de Tenerife         |
+| Badalona                       |
+| Oviedo                         |
+| Móstoles                       |
+| Elche [Elx]                    |
+| Sabadell                       |
+| Santander                      |
+| Jerez de la Frontera           |
+| Pamplona [Iruña]               |
+| Donostia-San Sebastián         |
+| Cartagena                      |
+| Leganés                        |
+| Fuenlabrada                    |
+| Almería                        |
+| Terrassa                       |
+| Alcalá de Henares              |
+| Burgos                         |
+| Salamanca                      |
+| Albacete                       |
+| Getafe                         |
+| Cádiz                          |
+| Alcorcón                       |
+| Huelva                         |
+| León                           |
+| Castellón de la Plana [Castell |
+| Badajoz                        |
+| [San Cristóbal de] la Laguna   |
+| Logroño                        |
+| Santa Coloma de Gramenet       |
+| Tarragona                      |
+| Lleida (Lérida)                |
+| Jaén                           |
+| Ourense (Orense)               |
+| Mataró                         |
+| Algeciras                      |
+| Marbella                       |
+| Barakaldo                      |
+| Dos Hermanas                   |
+| Santiago de Compostela         |
+| Torrejón de Ardoz              |
++--------------------------------+
 59 rows in set (0.01 sec)
 
 ---5. Ver todas las ciudades y sus códigos de pais, ordenados por código de país.
 select name,countrycode from city order by countrycode; 
-+----------------+-------------+
-| name           | countrycode |
-+----------------+-------------+
-| Oranjestad     | ABW         |
-| Kabul          | AFG         |
-| Qandahar       | AFG         |
-| Herat          | AFG         |
-| Mazar-e-Sharif | AFG         |
-| Luanda         | AGO         |
-| Huambo         | AGO         |
-| Lobito         | AGO         |
-| Benguela       | AGO         |
-| Namibe         | AGO         |
-+----------------+-------------+
-10 rows in set (0.00 sec)
++-----------------------------------+-------------+
+| name                              | countrycode |
++-----------------------------------+-------------+
+| Oranjestad                        | ABW         |
+| Kabul                             | AFG         |
+| Qandahar                          | AFG         |
+| Herat                             | AFG         |
+| Mazar-e-Sharif                    | AFG         |
+| Luanda                            | AGO         |
+| Huambo                            | AGO         |
+| Lobito                            | AGO         |
+| Benguela                          | AGO         |
+| Namibe                            | AGO         |
+| South Hill                        | AIA         |
+| The Valley                        | AIA         |
+| Tirana                            | ALB         |
+| Andorra la Vella                  | AND         |
+| Willemstad                        | ANT         |
+| Dubai                             | ARE         |
+| Abu Dhabi                         | ARE         |
+| Sharja                            | ARE         |
+| al-Ayn                            | ARE         |
+| Ajman                             | ARE         |
+| Buenos Aires                      | ARG         |
+| La Matanza                        | ARG         |
+| Córdoba                           | ARG         |
+| Rosario                           | ARG         |
+| Lomas de Zamora                   | ARG         |
+| Quilmes                           | ARG         |
+| Almirante Brown                   | ARG         |
+| La Plata                          | ARG         |
+| Mar del Plata                     | ARG         |
+| San Miguel de Tucumán             | ARG         |
+| Lanús                             | ARG         |
+| Merlo                             | ARG         |
+| General San Martín                | ARG         |
+| Salta                             | ARG         |
+| Moreno                            | ARG         |
+| Santa Fé                          | ARG         |
+| Avellaneda                        | ARG         |
+| Tres de Febrero                   | ARG         |
+| Morón                             | ARG         |
+| Florencio Varela                  | ARG         |
+| San Isidro                        | ARG         |
+| Tigre                             | ARG         |
+| Malvinas Argentinas               | ARG         |
+| Vicente López                     | ARG         |
+| Berazategui                       | ARG         |
+| Corrientes                        | ARG         |
+| San Miguel                        | ARG         |
+| Bahía Blanca                      | ARG         |
+| Esteban Echeverría                | ARG         |
+| Resistencia                       | ARG         |
+| José C. Paz                       | ARG         |
+| Paraná                            | ARG         |
+| Godoy Cruz                        | ARG         |
+| Posadas                           | ARG         |
+| Guaymallén                        | ARG         |
+| Santiago del Estero               | ARG         |
+| San Salvador de Jujuy             | ARG         |
+| Hurlingham                        | ARG         |
+| Neuquén                           | ARG         |
+| Ituzaingó                         | ARG         |
+| San Fernando                      | ARG         |
+| Formosa                           | ARG         |
+| Las Heras                         | ARG         |
+| La Rioja                          | ARG         |
+| San Fernando del Valle de Cata    | ARG         |
+| Río Cuarto                        | ARG         |
+| Comodoro Rivadavia                | ARG         |
+| Mendoza                           | ARG         |
+| San Nicolás de los Arroyos        | ARG         |
+| San Juan                          | ARG         |
+| Escobar                           | ARG         |
+| Concordia                         | ARG         |
+| Pilar                             | ARG         |
+| San Luis                          | ARG         |
+| Ezeiza                            | ARG         |
+| San Rafael                        | ARG         |
+| Tandil                            | ARG         |
+| Yerevan                           | ARM         |
+| Gjumri                            | ARM         |
+| Vanadzor                          | ARM         |
+| Tafuna                            | ASM         |
+| Fagatogo                          | ASM         |
+| Saint John´s                      | ATG         |
+| Sydney                            | AUS         |
+| Melbourne                         | AUS         |
+| Brisbane                          | AUS         |
+| Perth                             | AUS         |
+| Adelaide                          | AUS         |
+| Canberra                          | AUS         |
++-----------------------------------+-------------+
+4079 rows in set (0.01 sec)
 
 ---6. Ver cuantas ciudades tiene cada país
-select countrycode, count(name) from city group by countrycode limit 10;
+select countrycode, count(name) from city group by countrycode;
 +-------------+-------------+
 | countrycode | count(name) |
 +-------------+-------------+
@@ -155,8 +233,19 @@ select countrycode, count(name) from city group by countrycode limit 10;
 | ARE         |           5 |
 | ARG         |          57 |
 | ARM         |           3 |
+| VGB         |           1 |
+| VIR         |           1 |
+| VNM         |          22 |
+| VUT         |           1 |
+| WLF         |           1 |
+| WSM         |           1 |
+| YEM         |           6 |
+| YUG         |           8 |
+| ZAF         |          44 |
+| ZMB         |           7 |
+| ZWE         |           6 |
 +-------------+-------------+
-10 rows in set (0.00 sec)
+232 rows in set (0.01 sec)
 
 ---7. Sacar la población menor.
 select min(population) from city;
@@ -195,7 +284,7 @@ select sum(population) from city;
 1 row in set (0.00 sec)
 
 ---11. Saca los distintos códigos de país.
-select distinct(countrycode) from city limit 20;
+select distinct(countrycode) from city;
 +-------------+
 | countrycode |
 +-------------+
@@ -220,7 +309,7 @@ select distinct(countrycode) from city limit 20;
 | BFA         |
 | BGD         |
 +-------------+
-20 rows in set (0.00 sec)
+232 rows in set (0.00 sec)
 
 ---12. Cuenta los distintos códigos de país.
 select count(distinct(countrycode)) from city;
@@ -232,7 +321,7 @@ select count(distinct(countrycode)) from city;
 1 row in set (0.00 sec)
 
 ---13. Saca las ciudades del país usa, que su población sea mayor de 10000.
-select name from city where countrycode like"USA" and population>10000 limit 20;
+select name from city where countrycode like"USA" and population>10000;
 +---------------+-------------+
 | name          | countrycode |
 +---------------+-------------+
@@ -257,7 +346,7 @@ select name from city where countrycode like"USA" and population>10000 limit 20;
 | Milwaukee     | USA         |
 | Boston        | USA         |
 +---------------+-------------+
-20 rows in set (0.00 sec)
+274 rows in set (0.00 sec)
 
 ---14. Cuenta todos los códigos de países.
 select count(countrycode) from city;
@@ -378,7 +467,7 @@ select countrycode,district,count(name) from city group by district,countrycode 
 20 rows in set (0.01 sec)
 
 ---21. Saca la suma de la población de todos los distritos de España
-select sum(population) from city where countrycode like "ESP" order by district;
+select sum(population) from city where countrycode like "ESP";
 +-----------------+
 | sum(population) |
 +-----------------+
@@ -386,14 +475,14 @@ select sum(population) from city where countrycode like "ESP" order by district;
 +-----------------+
 1 row in set (0.00 sec)
 
-##########---22. Cual es el distrito español con más habitantes.
-mysql> select district,sum(population) from city where countrycode like "ESP" group by district order by sum(population)desc limit 1;
-+----------+-----------------+
-| district | sum(population) |
-+----------+-----------------+
-| Madrid   |         3962883 |
-+----------+-----------------+
-1 row in set (0.00 sec)
+---22. Cual es el distrito español con más habitantes.
+select district,population from city where population like (select max(population) from city where countrycode like "ESP");
++----------+------------+
+| district | population |
++----------+------------+
+| Madrid   |    2879052 |
++----------+------------+
+1 row in set (0.01 sec)
 
 
 
@@ -408,7 +497,7 @@ select max(lifeexpectancy) from country;
 1 row in set (0.00 sec)
 
 ---2. Saca la lista de las capitales de todos los países
-select distinct(capital) from country limit 20;
+select distinct(capital) from country;
 +---------+
 | capital |
 +---------+
@@ -433,7 +522,7 @@ select distinct(capital) from country limit 20;
 |     187 |
 |     549 |
 +---------+
-20 rows in set (0.00 sec)
+239 rows in set (0.00 sec)
 
 ---3. Saca la lista de las capitales europeas
 select capital from country where continent like "europe";
@@ -490,7 +579,7 @@ select capital from country where continent like "europe";
 46 rows in set (0.00 sec)
 
 ---4. Saca las lista de las capitales africanas y norteamericanas
-select distinct(capital) from country where continent like "Afri%" or continent like "Nor%" limit 20;
+select distinct(capital) from country where continent like "Afri%" or continent like "North%";
 +---------+
 | capital |
 +---------+
@@ -514,8 +603,13 @@ select distinct(capital) from country where continent like "Afri%" or continent 
 |    2298 |
 |    2296 |
 |    2295 |
+|     537 |
+|    4067 |
+|     716 |
+|    3162 |
+|    4068 |
 +---------+
-20 rows in set (0.00 sec)
+95 rows in set (0.04 sec)
 
 ---5. Halla la población media
 select avg(population) from country;
@@ -551,7 +645,7 @@ select distinct(continent) from country order by lifeexpectancy desc;
 7 rows in set (0.00 sec)
 
 ---8. Cual es la mayor esperanza de vida (Dos formas de hacerlo, con una variable y de una  forma nueva, usar una select como tabla)
-???? select max(lifeexpectancy) from country; ???????
+select max(lifeexpectancy) from country;
 +---------------------+
 | max(lifeexpectancy) |
 +---------------------+
@@ -751,13 +845,41 @@ select count(city.name),country.surfacearea from city,country where city.country
 232 rows in set (0.01 sec)
 
 ---3. Averigua la longevidad media en todos los países que hablan Español.
-select avg(country.lifeexpectancy) from country,countrylanguage where country.code = countrylanguage.countrycode and language like "spanish";
-+-----------------------------+
-| avg(country.lifeexpectancy) |
-+-----------------------------+
-|                    74.10000 |
-+-----------------------------+
-1 row in set (0.00 sec)
+select name,lifeexpectancy from country,countrylanguage where country.code = countrylanguage.countrycode and language like "spanish";
+
++----------------------+----------------+
+| name                 | lifeexpectancy |
++----------------------+----------------+
+| Aruba                |           78.4 |
+| Andorra              |           83.5 |
+| Argentina            |           75.1 |
+| Belize               |           70.9 |
+| Bolivia              |           63.7 |
+| Canada               |           79.4 |
+| Chile                |           75.7 |
+| Colombia             |           70.3 |
+| Costa Rica           |           75.8 |
+| Cuba                 |           76.2 |
+| Dominican Republic   |           73.2 |
+| Ecuador              |           71.1 |
+| Spain                |           78.8 |
+| France               |           78.8 |
+| Guatemala            |           66.2 |
+| Honduras             |           69.9 |
+| Mexico               |           71.5 |
+| Nicaragua            |           68.7 |
+| Panama               |           75.5 |
+| Peru                 |           70.0 |
+| Puerto Rico          |           75.6 |
+| Paraguay             |           73.7 |
+| El Salvador          |           69.7 |
+| Sweden               |           79.6 |
+| Uruguay              |           75.2 |
+| United States        |           77.1 |
+| Venezuela            |           73.1 |
+| Virgin Islands, U.S. |           78.1 |
++----------------------+----------------+
+28 rows in set (0.01 sec)
 
 ---4. Cuantas ciudades tenemos en Spain.
 select count(city.name) from city,country where city.countrycode = country.code and country.name like "Spain";
@@ -1511,8 +1633,6 @@ select country.name,count(countrylanguage.language) from country,countrylanguage
 +---------------------------------------+---------------------------------+
 233 rows in set (0.00 sec)
 
-
-
 ---18. ¿Tenemos algún país con dos lenguas oficiales? (hacer con having)
 select country.name,count(countrylanguage.language) from country,countrylanguage where country.code=countrylanguage.countrycode and countrylanguage.isofficial like 'T' group by country.name having count(countrylanguage.language) = 2;
 +----------------------+---------------------------------+
@@ -1590,6 +1710,7 @@ Query OK, 0 rows affected (0.01 sec)
 select * from vista2;
 
 Empty set (0.00 sec)
+
 ---3. Crea una vista con todas las provincias (Distritos) de España
 create view vista3 as select district from city where countrycode like 'ESP';
 
