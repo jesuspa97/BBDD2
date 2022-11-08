@@ -1,0 +1,6 @@
+select population FROM city;
+
+
+
+
+
